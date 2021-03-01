@@ -28,6 +28,10 @@ class AlienInvasion:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RIGHT:
+                    # 向右移动
+                    self.ship.rect.x += 1
 
     def _upsate_screen(self):
         """每次环时都会重绘屏幕"""
