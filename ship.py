@@ -9,5 +9,13 @@ class Ship:
         self.rect = self.image.get_rect()
         self.rect.midbottom = self.screen_rect.midbottom
 
+        # 移动标志
+        self.moving_right = False
+
+    def update(self):
+        """根据移动标志调飞机位置"""
+        if self.moving_right:
+            self.rect.x += 1
+
     def blitme(self):
         self.screen.blit(self.image, self.rect)
